@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "suppliers",
+  "info": {
+    "singularName": "supplier",
+    "pluralName": "suppliers",
+    "displayName": "Поставщик",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "uid",
+      "required": true,
+      "minLength": 3,
+      "maxLength": 150
+    },
+    "priceList": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product"
+    }
+  }
+}
